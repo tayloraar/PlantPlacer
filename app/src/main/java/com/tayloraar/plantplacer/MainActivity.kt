@@ -6,6 +6,7 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
 
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     private lateinit var sensorManager: SensorManager
     private var brightness: Sensor? = null
     private lateinit var text: TextView
+    private var resume = false;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +36,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     }
 
     override fun onSensorChanged(event: SensorEvent?) {
-        if (event?.sensor?.type == Sensor.TYPE_LIGHT) {
+        if (event?.sensor?.type == Sensor.TYPE_LIGHT && resume) {
             val light1 = event.values[0]
 
             text.text = "Sensor: $light1\n${brightness(light1)}"
@@ -66,5 +68,12 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     override fun onPause() {
         super.onPause()
         sensorManager.unregisterListener(this)
+    }
+
+    fun resumeScan(view:View){
+        this.resume = true
+    }
+    fun pauseScan(view: View){
+        this.resume = false
     }
 }
