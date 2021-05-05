@@ -9,10 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PlantPlacer">
+
+
         <activity
             android:name=".ScanActivity"
             android:label="@string/title_activity_scan"
-            android:theme="@style/Theme.PlantPlacer.NoActionBar"></activity>
+            android:theme="@style/Theme.PlantPlacer.NoActionBar" />
         <activity
             android:name=".LoadingSplash"
             android:theme="@style/Theme.PlantPlacer.NoActionBar">

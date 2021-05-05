@@ -6,15 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment() {
+class ScanStartFragment : Fragment() {
 
     private val viewModel: ItemViewModel by activityViewModels()
 
@@ -23,25 +21,20 @@ class FirstFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first, container, false)
+        return inflater.inflate(R.layout.fragment_scan_start, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var count = 100
-//        view.findViewById<TextView>(R.id.scanTextView).text = viewModel.selectedItem.value
-        viewModel.selectedItem.observe(viewLifecycleOwner, Observer { data ->
-            view.findViewById<TextView>(R.id.scanTextView).text = data.toString()
-        })
+
+//        viewModel.selectedItem.observe(viewLifecycleOwner, Observer { data ->
+//            view.findViewById<TextView>(R.id.scanTextView).text = data.toString()
+//        })
 
         view.findViewById<Button>(R.id.button_first).setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            findNavController().navigate(R.id.action_FirstFragment_to_scanSplash)
         }
 
-        while (count > 0){
-            view.findViewById<TextView>(R.id.scanTextView).text = viewModel.selectedItem.value
-            count --
-        }
 
     }
 

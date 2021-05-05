@@ -4,47 +4,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/greenLight"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/Theme.PlantPlacer.PopupOverlay" />
-
     <TextView
-        android:id="@+id/tv_text2"
+        android:id="@+id/sanPosTV3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:clickable="true"
+        android:onClick="onScanClick"
+        android:text="Manual Input"
+        android:textColor="@color/beigeLight"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/scanBtn3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.244"
+        app:layout_constraintStart_toEndOf="@+id/scanBtn3"
+        app:layout_constraintTop_toTopOf="@+id/scanBtn3"
+        app:layout_constraintVertical_bias="0.551" />
+
+    <Button
+        android:id="@+id/scanBtn3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
+        android:background="@drawable/manualinputicon"
+        app:backgroundTint="@color/beigeLight"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scanBtn2" />
+
+    <TextView
+        android:id="@+id/sanPosTV2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="onScanClick"
+        android:text="Saved Scans \n(Coming Soon)"
+        android:textColor="@color/beigeLight"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/scanBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.282"
+        app:layout_constraintStart_toEndOf="@+id/scanBtn"
+        app:layout_constraintTop_toTopOf="@+id/scanBtn" />
 
     <Button
         android:id="@+id/scanBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Scan"
-        android:textColor="#FFFFFF"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
+        android:background="@drawable/savedscansicon"
+        app:backgroundTint="@color/beigeLight"
+        app:layout_constraintBottom_toTopOf="@+id/scanBtn2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/scanBtn2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
+        android:background="@drawable/cloud"
+        app:backgroundTint="@color/beigeLight"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="229dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_text2" />
+        app:srcCompat="@drawable/plant_placer_logox4" />
 
-    <Button
-        android:id="@+id/pause"
+    <TextView
+        android:id="@+id/sanPosTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="pauseScan"
-        android:text="Pause"
-        app:layout_constraintBottom_toTopOf="@+id/tv_text2"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:text="Scan Position"
+        android:textColor="@color/beigeLight"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/scanBtn2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/scanBtn2"
+        app:layout_constraintTop_toTopOf="@+id/scanBtn2"
+        android:onClick="onScanClick"
+        android:clickable="true"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

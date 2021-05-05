@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/greenLight"
-    tools:context=".LoadingSplash">
+     tools:context=".ScanSplash">
 
     <ImageView
         android:id="@+id/imageView5"
@@ -45,23 +45,27 @@
         android:id="@+id/scanningTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/loading_in_the_meantime_don_t_forget_to_hidrate"
-        app:layout_constraintBottom_toTopOf="@+id/imageView5"
+        android:text="@string/scaningENV"
+        android:textColor="@color/beigeLight"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar"
-        app:layout_constraintVertical_bias="0.235" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/scanFunnyTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hidrate"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        android:layout_width="350dp"
+        android:layout_height="121dp"
+        android:text="@string/heavymetalsmalltalk"
+        android:textColor="@color/beigeLight"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView5"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scanningTV"
-        app:layout_constraintVertical_bias="0.284" />
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
