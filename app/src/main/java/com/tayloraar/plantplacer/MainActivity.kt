@@ -1,5 +1,6 @@
 package com.tayloraar.plantplacer
 
+import android.content.Intent
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -7,73 +8,25 @@ import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.navigation.fragment.findNavController
 
-class MainActivity : AppCompatActivity(), SensorEventListener {
+class MainActivity : AppCompatActivity() {
 
-    private lateinit var sensorManager: SensorManager
-    private var brightness: Sensor? = null
-    private lateinit var text: TextView
-    private var resume = false;
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-
-        text = findViewById(R.id.tv_text)
-
-        setUpSensor()
-
-    }
-
-    private fun setUpSensor() {
-        sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
-
-        brightness = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)
-    }
-
-    override fun onSensorChanged(event: SensorEvent?) {
-        if (event?.sensor?.type == Sensor.TYPE_LIGHT && resume) {
-            val light1 = event.values[0]
-
-            text.text = "Sensor: $light1\n${brightness(light1)}"
+        findViewById<Button>(R.id.scanBtn).setOnClickListener {
+            startActivity(Intent(this, ScanActivity::class.java))
         }
+
     }
 
-    private fun brightness(brightness: Float): String {
 
-        return when (brightness.toInt()) {
-            0 -> "Pitch black"
-            in 1..10 -> "Dark"
-            in 11..50 -> "Grey"
-            in 51..5000 -> "Normal"
-            in 5001..25000 -> "Incredibly bright"
-            else -> "This light will blind you"
-        }
-    }
-
-    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
-        return
-    }
-
-    override fun onResume() {
-        super.onResume()
-        // Register a listener for the sensor.
-        sensorManager.registerListener(this, brightness, SensorManager.SENSOR_DELAY_NORMAL)
-    }
-
-    override fun onPause() {
-        super.onPause()
-        sensorManager.unregisterListener(this)
-    }
-
-    fun resumeScan(view:View){
-        this.resume = true
-    }
-    fun pauseScan(view: View){
-        this.resume = false
-    }
 }

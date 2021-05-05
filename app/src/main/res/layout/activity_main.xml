@@ -7,8 +7,16 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/Theme.PlantPlacer.PopupOverlay" />
+
     <TextView
-        android:id="@+id/tv_text"
+        android:id="@+id/tv_text2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
@@ -18,16 +26,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/Scan"
+        android:id="@+id/scanBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="resumeScan"
         android:text="Scan"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_text" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_text2" />
 
     <Button
         android:id="@+id/pause"
@@ -35,7 +42,7 @@
         android:layout_height="wrap_content"
         android:onClick="pauseScan"
         android:text="Pause"
-        app:layout_constraintBottom_toTopOf="@+id/tv_text"
+        app:layout_constraintBottom_toTopOf="@+id/tv_text2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
