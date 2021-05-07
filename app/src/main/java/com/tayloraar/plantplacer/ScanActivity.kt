@@ -63,10 +63,12 @@ class ScanActivity : AppCompatActivity(), SensorEventListener {
 
         return when (brightness.toInt()) {
             0 -> "Pitch black"
-            in 1..10 -> "Dark"
-            in 11..50 -> "Grey"
-            in 51..5000 -> "Normal"
-            in 5001..25000 -> "Incredibly bright"
+            in 1..499 -> "Too Dark For Plants!"
+            in 500..2500 -> "Very low-light plants or heavy shade plants"
+            in 2501..5000 -> "Low-light or partial shade plants"
+            in 5001..10000 -> "Medium-light or partial sun plants"
+            in 10001..20000 -> "Bright-light no direct sun"
+            in 20001..50000 -> "Full sun all day"
             else -> "This light will blind you"
         }
     }

@@ -9,9 +9,6 @@ import android.widget.Button
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
 class ScanStartFragment : Fragment() {
 
     private val viewModel: ItemViewModel by activityViewModels()
@@ -27,16 +24,8 @@ class ScanStartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        viewModel.selectedItem.observe(viewLifecycleOwner, Observer { data ->
-//            view.findViewById<TextView>(R.id.scanTextView).text = data.toString()
-//        })
-
         view.findViewById<Button>(R.id.button_first).setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_scanSplash)
         }
-
-
     }
-
-
 }

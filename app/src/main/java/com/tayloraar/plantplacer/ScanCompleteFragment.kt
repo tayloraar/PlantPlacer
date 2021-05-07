@@ -37,10 +37,7 @@ class ScanCompleteFragment : Fragment() {
        }
 
         loadedScan(view)
-        // Start the animation (looped playback by default).
-        frameAnimation.start();
-
-
+          frameAnimation.start();
 
         view.findViewById<Button>(R.id.button_second).setOnClickListener {
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)

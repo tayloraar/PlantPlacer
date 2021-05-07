@@ -20,23 +20,14 @@ class LoadingSplash : AppCompatActivity() {
             frameAnimation = background as AnimationDrawable
         }
 
-
-        // Start the animation (looped playback by default).
         frameAnimation.start();
 
         Handler().postDelayed({
-            // This method will be executed once the timer is over
-            // Start your app main activity
 
             startActivity(Intent(this,MainActivity::class.java))
 
-            // close this activity
             finish()
         }, SPLASH_TIME_OUT)
-
-
-
-
 
     }
 }

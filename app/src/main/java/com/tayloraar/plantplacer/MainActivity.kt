@@ -10,8 +10,6 @@ import androidx.appcompat.app.AppCompatDelegate
 
 class MainActivity : AppCompatActivity() {
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -20,10 +18,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.scanBtn2).setOnClickListener {
             startActivity(Intent(this, ScanActivity::class.java))
         }
-
     }
-fun onScanClick(view: View){
+    fun onScanClick(view: View){
     startActivity(Intent(this, ScanActivity::class.java))
-}
-
+    }
 }
