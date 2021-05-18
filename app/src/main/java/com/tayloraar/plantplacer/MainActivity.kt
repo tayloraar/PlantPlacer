@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +16,9 @@ class MainActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         findViewById<Button>(R.id.scanBtn2).setOnClickListener {
             startActivity(Intent(this, ScanActivity::class.java))
+        }
+        findViewById<Button>(R.id.manInpBtn).setOnClickListener {
+            startActivity(Intent(this, SelfInput::class.java))
         }
     }
     fun onScanClick(view: View){

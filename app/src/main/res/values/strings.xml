@@ -8,7 +8,7 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Welcome to PlantPlacer! \n
+    <string name="how_to_scan">Welcome to PlantPlacer! \n
         \n
         1. Place the phone in the desired location with the arrow facing towards the nearest window.\n
         \n
@@ -21,4 +21,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="scaningENV">Currently Scanning Your Environment</string>
     <string name="heavymetalsmalltalk">Did you know loudly playing heavy metal while you scream aggressive compliments at your plants is a super effective way to avoid awkward small talk with your neighbours.</string>
+    <string name="title_activity_self_input">SelfInput</string>
 </resources>

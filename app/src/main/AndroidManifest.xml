@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PlantPlacer">
-
-
+        <activity
+            android:name=".SelfInput"
+            android:label="@string/title_activity_self_input"
+            android:theme="@style/Theme.PlantPlacer.NoActionBar"></activity>
         <activity
             android:name=".ScanActivity"
             android:label="@string/title_activity_scan"

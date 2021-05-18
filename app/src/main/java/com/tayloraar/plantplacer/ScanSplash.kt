@@ -1,6 +1,5 @@
 package com.tayloraar.plantplacer
 
-import android.content.Intent
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.os.Handler
@@ -8,7 +7,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import androidx.navigation.fragment.findNavController
 
@@ -40,7 +38,7 @@ class ScanSplash : Fragment() {
         frameAnimation.start();
 
         Handler().postDelayed({
-              findNavController().navigate(R.id.action_scanSplash_to_SecondFragment)
+              findNavController().navigate(R.id.action_scanSpash_to_Scan_Complete)
         }, SPLASH_TIME_OUT)
     }
 }

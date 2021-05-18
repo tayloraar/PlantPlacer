@@ -16,15 +16,15 @@
         android:text="Manual Input"
         android:textColor="@color/beigeLight"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/scanBtn3"
+        app:layout_constraintBottom_toBottomOf="@+id/manInpBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.244"
-        app:layout_constraintStart_toEndOf="@+id/scanBtn3"
-        app:layout_constraintTop_toTopOf="@+id/scanBtn3"
+        app:layout_constraintStart_toEndOf="@+id/manInpBtn"
+        app:layout_constraintTop_toTopOf="@+id/manInpBtn"
         app:layout_constraintVertical_bias="0.551" />
 
     <Button
-        android:id="@+id/scanBtn3"
+        android:id="@+id/manInpBtn"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="76dp"
@@ -44,14 +44,14 @@
         android:text="Saved Scans \n(Coming Soon)"
         android:textColor="@color/beigeLight"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/scanBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/saveScnBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.282"
-        app:layout_constraintStart_toEndOf="@+id/scanBtn"
-        app:layout_constraintTop_toTopOf="@+id/scanBtn" />
+        app:layout_constraintStart_toEndOf="@+id/saveScnBtn"
+        app:layout_constraintTop_toTopOf="@+id/saveScnBtn" />
 
     <Button
-        android:id="@+id/scanBtn"
+        android:id="@+id/saveScnBtn"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="76dp"
